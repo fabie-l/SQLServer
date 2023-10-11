@@ -20,20 +20,13 @@ namespace SQLServer
                 Status VARCHAR(50) NOT NULL,
             )";
 
-            if (!SQLServer.TableExist(connection, table))
+            try
             {
-                try
-                {
-                    SQLServer.CreateTable(connection, CreateQuery, table);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
+                SQLServer.CreateTable(connection, CreateQuery, table);
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine($"Table {table} exists. Creation skipped ...");
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -50,20 +43,13 @@ namespace SQLServer
                 PreferredName VARCHAR(10) NOT NULL,
             )";
 
-            if (!SQLServer.TableExist(connection, table))
+            try
             {
-                try
-                {
-                    SQLServer.CreateTable(connection, CreateQuery, table);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
+                SQLServer.CreateTable(connection, CreateQuery, table);
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine($"Table {table} exists. Creation skipped ...");
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -90,21 +76,13 @@ namespace SQLServer
                 FOREIGN KEY (RecordUpdateStatusID) REFERENCES RecordUpdateStatus(RecordUpdateStatusID)
              )";
 
-            if (!SQLServer.TableExist(connection, table))
+            try
             {
-
-                try
-                {
-                    SQLServer.CreateTable(connection, CreateQuery, table);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
+                SQLServer.CreateTable(connection, CreateQuery, table);
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine($"Table {table} exists. Creation skipped ...");
+                Console.WriteLine(ex.Message);
             }
 
         }
@@ -126,20 +104,13 @@ namespace SQLServer
                 FOREIGN KEY (UserId) REFERENCES Users(UserId)
             )";
 
-            if (!SQLServer.TableExist(connection, table))
+            try
             {
-                try
-                {
-                    SQLServer.CreateTable(connection, CreateQuery, table);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
+                SQLServer.CreateTable(connection, CreateQuery, table);
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine($"Table {table} exists. Creation skipped ...");
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -156,20 +127,13 @@ namespace SQLServer
                 FOREIGN KEY (UserToProjectId) REFERENCES UserToProject(UserToProjectId)
             )";
 
-            if (!SQLServer.TableExist(connection, table))
+            try
             {
-                try
-                {
-                    SQLServer.CreateTable(connection, CreateQuery, table);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
+                SQLServer.CreateTable(connection, CreateQuery, table);
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine($"Table {table} exists. Creation skipped ...");
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -193,20 +157,13 @@ namespace SQLServer
                 FOREIGN KEY (RecordUpdateStatusID) REFERENCES RecordUpdateStatus(RecordUpdateStatusID)
              )";
 
-            if (!SQLServer.TableExist(connection, table))
+            try
             {
-                try
-                {
-                    SQLServer.CreateTable(connection, CreateQuery, table);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
+                SQLServer.CreateTable(connection, CreateQuery, table);
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine($"Table {table} exists. Creation skipped ...");
+                Console.WriteLine(ex.Message);
             }
 
         }
@@ -233,20 +190,13 @@ namespace SQLServer
                 FOREIGN KEY (RecordUpdateStatusID) REFERENCES RecordUpdateStatus(RecordUpdateStatusID)
              )";
 
-            if (!SQLServer.TableExist(connection, table))
+            try
             {
-                try
-                {
-                    SQLServer.CreateTable(connection, CreateQuery, table);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
+                SQLServer.CreateTable(connection, CreateQuery, table);
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine($"Table {table} exists. Creation skipped ...");
+                Console.WriteLine(ex.Message);
             }
 
         }
@@ -271,20 +221,13 @@ namespace SQLServer
                 FOREIGN KEY (RecordUpdateStatusID) REFERENCES RecordUpdateStatus(RecordUpdateStatusID)
              )";
 
-            if (!SQLServer.TableExist(connection, table))
+            try
             {
-                try
-                {
-                    SQLServer.CreateTable(connection, CreateQuery, table);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
+                SQLServer.CreateTable(connection, CreateQuery, table);
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine($"Table {table} exists. Creation skipped ...");
+                Console.WriteLine(ex.Message);
             }
 
         }
@@ -307,20 +250,13 @@ namespace SQLServer
                 FOREIGN KEY (RecordUpdateStatusID) REFERENCES RecordUpdateStatus(RecordUpdateStatusID)
              )";
 
-            if (!SQLServer.TableExist(connection, table))
+            try
             {
-                try
-                {
-                    SQLServer.CreateTable(connection, CreateQuery, table);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
+                SQLServer.CreateTable(connection, CreateQuery, table);
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine($"Table {table} exists. Creation skipped ...");
+                Console.WriteLine(ex.Message);
             }
 
         }
@@ -342,20 +278,13 @@ namespace SQLServer
                 FOREIGN KEY (RecordUpdateStatusID) REFERENCES RecordUpdateStatus(RecordUpdateStatusID)
              )";
 
-            if (!SQLServer.TableExist(connection, table))
+            try
             {
-                try
-                {
-                    SQLServer.CreateTable(connection, CreateQuery, table);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
+                SQLServer.CreateTable(connection, CreateQuery, table);
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine($"Table {table} exists. Creation skipped ...");
+                Console.WriteLine(ex.Message);
             }
 
         }
@@ -369,6 +298,7 @@ namespace SQLServer
                 attrid BIGINT PRIMARY KEY,
                 name VARCHAR(250), 
                 attr_type VARCHAR(250),
+                value VARCHAR(MAX),
                 id BIGINT,
                 date DATETIME,
                 owner VARCHAR(250),
@@ -377,20 +307,13 @@ namespace SQLServer
                 FOREIGN KEY (RecordUpdateStatusID) REFERENCES RecordUpdateStatus(RecordUpdateStatusID)
              )";
 
-            if (!SQLServer.TableExist(connection, table))
+            try
             {
-                try
-                {
-                    SQLServer.CreateTable(connection, CreateQuery, table);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
+                SQLServer.CreateTable(connection, CreateQuery, table);
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine($"Table {table} exists. Creation skipped ...");
+                Console.WriteLine(ex.Message);
             }
 
         }
@@ -414,20 +337,13 @@ namespace SQLServer
                 FOREIGN KEY (RecordUpdateStatusID) REFERENCES RecordUpdateStatus(RecordUpdateStatusID)
              )";
 
-            if (!SQLServer.TableExist(connection, table))
+            try
             {
-                try
-                {
-                    SQLServer.CreateTable(connection, CreateQuery, table);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
+                SQLServer.CreateTable(connection, CreateQuery, table);
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine($"Table {table} exists. Creation skipped ...");
+                Console.WriteLine(ex.Message);
             }
 
         }
@@ -448,20 +364,13 @@ namespace SQLServer
                 FOREIGN KEY (RecordUpdateStatusID) REFERENCES RecordUpdateStatus(RecordUpdateStatusID)
              )";
 
-            if (!SQLServer.TableExist(connection, table))
+            try
             {
-                try
-                {
-                    SQLServer.CreateTable(connection, CreateQuery, table);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
+                SQLServer.CreateTable(connection, CreateQuery, table);
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine($"Table {table} exists. Creation skipped ...");
+                Console.WriteLine(ex.Message);
             }
 
         }
@@ -483,20 +392,13 @@ namespace SQLServer
                 FOREIGN KEY (RecordUpdateStatusID) REFERENCES RecordUpdateStatus(RecordUpdateStatusID)
              )";
 
-            if (!SQLServer.TableExist(connection, table))
+            try
             {
-                try
-                {
-                    SQLServer.CreateTable(connection, CreateQuery, table);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
+                SQLServer.CreateTable(connection, CreateQuery, table);
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine($"Table {table} exists. Creation skipped ...");
+                Console.WriteLine(ex.Message);
             }
 
         }
@@ -523,20 +425,13 @@ namespace SQLServer
                 FOREIGN KEY (RecordUpdateStatusID) REFERENCES RecordUpdateStatus(RecordUpdateStatusID)
              )";
 
-            if (!SQLServer.TableExist(connection, table))
+            try
             {
-                try
-                {
-                    SQLServer.CreateTable(connection, CreateQuery, table);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
+                SQLServer.CreateTable(connection, CreateQuery, table);
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine($"Table {table} exists. Creation skipped ...");
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -558,20 +453,13 @@ namespace SQLServer
                 FOREIGN KEY (RecordUpdateStatusID) REFERENCES RecordUpdateStatus(RecordUpdateStatusID)
              )";
 
-            if (!SQLServer.TableExist(connection, table))
+            try
             {
-                try
-                {
-                    SQLServer.CreateTable(connection, CreateQuery, table);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
+                SQLServer.CreateTable(connection, CreateQuery, table);
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine($"Table {table} exists. Creation skipped ...");
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -591,20 +479,13 @@ namespace SQLServer
                 FOREIGN KEY (RecordUpdateStatusID) REFERENCES RecordUpdateStatus(RecordUpdateStatusID)
              )";
 
-            if (!SQLServer.TableExist(connection, table))
+            try
             {
-                try
-                {
-                    SQLServer.CreateTable(connection, CreateQuery, table);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
+                SQLServer.CreateTable(connection, CreateQuery, table);
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine($"Table {table} exists. Creation skipped ...");
+                Console.WriteLine(ex.Message);
             }
         }
 
